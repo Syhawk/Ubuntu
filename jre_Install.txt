@@ -4,10 +4,18 @@ tar -xzvf jre-7u25-linux-i586.tar.gz
 目录移动：
 sudo mv jre-7u25-linux-i586 /usr/lib/java
 
-配置环境变量：
-sudo vim /etc/environmen
+事实上不需要配置环境变量就能运行成功（原因可能是下面的命令进一步安装了jre）。
+配置环境变量（如果要配置环境变量，最好这一种）：
+sudo vim /etc/profile
+在文件尾后追加下面一行并保存退出：
+export PATH＝"$PATH:/usr/lib/java/bin" 
+如果执行下述操作,将会一直卡在登录页面进不去。
+(sudo vim /etc/environmen
 在打开的文件中加入如下环境变量：
-PATH＝"$PATH:/usr/lib/java/bin" 
+export PATH＝"/usr/lib/java/bin:$PATH"
+之所以卡在登录页面，是因为在environment这个文件中，export，$等等都无法使用，
+所以只得在PATH里面直接添加，如果要删除jre的环境变量，手误操作会删错原本带有
+的环境变量，所以不推荐这一种。)
 
 使用如下命令来进一步安装这个jre：
 

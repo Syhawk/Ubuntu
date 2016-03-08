@@ -1,0 +1,36 @@
+1, 首先摸清我系统的硬盘分区等使用情况
+sudo fdisk -l
+sudo blkid
+
+2,修改分区挂在配置表
+打开/etc/fstab
+
+配置文件包含以下几项：
+
+<file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+#MySpace分区
+/dev/sda8    /media/Data    ntfs    defaults,locale=zh_CN.UTF-8    0    0
+
+<file system> 是您想要mount的储存装置的实体位置，如/dev/hda7
+
+<mount point> 是您想要将其加入至哪个目录位置，如/home或/,这其实就是在安装时提示的挂入点。(注意，千万不要将挂载目录设置为/，否在会覆盖原有的根目录，系统就会挂掉)
+
+<type> 是所谓的local filesystem，其包含了以下格式：如ext、ext2、msdos、iso9660、nfs、swap等，或如上例的ext2，可以参见/prco/filesystems说明
+
+<options> 是您mount时，所要设定的参数，如ro（只读）或如上例的defaults（包括了其它参数如rw、suid、exec、auto、nouser、async），可以参见「mount nfs」（详细说明见下方）
+
+<dump> 是磁盘备份，默认为0，不备份
+
+<pass> 是磁盘检查，默认为0，不检查；除了root的filesystem其必要的check为1之外，其它皆可视需要设定
+
+
+mount常用参数说明：
+auto 开机自动挂载
+default 按照大多数永久文件系统的缺省值设置挂载定义
+noauto 开机不自动挂载
+nouser 只有超级用户可以挂载
+ro 按只读权限挂载
+rw 按可读可写权限挂载
+user 任何用户都可以挂载
+请注意光驱和软驱只有在装有介质时才可以进行挂载，因此它是noauto

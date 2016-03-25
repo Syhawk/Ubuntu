@@ -1,0 +1,36 @@
+安装ssh，因为git是基于ssh协议的，所以必须先装ssh：
+sudo apt-get install openssh-server openssh-client
+
+安装好ssh后，启动ssh服务：
+sudo /etc/init.d/ssh restart
+
+安装git服务器：
+sudo apt-get install git-core
+
+首先在本地生成ssh公钥
+ssh-keygen -C 'your emaildress' -t rsa
+
+可以使用ssh -v git@github.com命令来测试链接是否畅通
+ssh -v git@github.com
+
+上传公钥至github
+在账户的profile里，选择SSH KEYS 选项，然后Add SSH Key，将~/.ssh/id_rsa.pub中的内容复制进去，上传。上上传成功后，会收到确认邮件。 可以使用ssh -v git@github.com命令来测试链接是否畅通。
+
+仓库初始化
+git init
+
+git配置
+git config --global user.name "Your Real Name"
+git config --global user.email you@email.address
+
+添加文件
+git add ./
+
+commit项目
+git commit -m 'my first version'
+
+上传项目
+git remote add origin git@github.com:你的github用户名/你的github项目名.git
+git push origin master
+
+在该步骤执行push时，有可能系统要求你先pull一下，那就先pull一下，再push。

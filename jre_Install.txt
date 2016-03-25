@@ -18,7 +18,6 @@ export PATH＝"/usr/lib/java/bin:$PATH"
 的环境变量，所以不推荐这一种。)
 
 使用如下命令来进一步安装这个jre：
-
 sudo update-alternatives --install /usr/bin/java java /usr/lib/java/java 300
 
 执行java -version，看看java是否安装正确。

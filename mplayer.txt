@@ -1,4 +1,5 @@
 #安装 Mplayer
+<<<<<<< HEAD
 #sudo apt-get install mplayer mplayer-fonts
 
 #再安装一个SMplayer就有图形化界面了(只需要安装smplayer即可，什么也不需要配置)
@@ -7,6 +8,16 @@ sudo apt-get install smplayer
 #配置 Mplayer(这个配置有的电脑上有，有的没有，没有的就不需要配置了)
 #sudo gedit /etc/mplayer/mplayer.conf
 #播放器问题解决：
+=======
+sudo apt-get install mplayer mplayer-fonts
+
+#再安装一个SMplayer就有图形化界面了
+sudo apt-get install smplayer
+
+#配置 Mplayer(这个配置有的电脑上有，有的没有，没有的就不需要配置了)
+sudo gedit /etc/mplayer/mplayer.conf
+播放器问题解决：
+>>>>>>> a4b397bf3febad265887b6bdbac16684c1f845df
 #1.找出下面这一行,去掉#
 #vo=x11,x11
 

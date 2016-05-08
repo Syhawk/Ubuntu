@@ -23,6 +23,9 @@ git配置
 git config --global user.name "Your Real Name"
 git config --global user.email you@email.address
 
+github遠程倉庫獲取
+git clone https://github.com/賬戶名/倉庫名.git
+
 添加文件
 git add ./
 

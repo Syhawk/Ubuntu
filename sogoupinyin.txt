@@ -1,6 +1,6 @@
 sudo su
 
-apt-get install fcitx libssh2-1
+apt-get install fcitx libssh2-1 fcitx-config-gtk
 
 dpkg -l | grep fcitx
 dpkg -l | grep libssh
@@ -11,6 +11,7 @@ dpkg -l | grep libssh
 dpkg -i sougou_64.deb
 
 系统设置>语言支持>键盘输入方式系统，然后选择 fcitx 项.
+如果期间存在依赖关系，使用apt-get -f install修复
 
 最后注销系统并重新登陆，在屏幕右上角就能看见输入法了，然后点击并选择设置，
 点击‘+’号查找输入法，不要选择选择当前存在的输入法，查找sogou输入法，然后

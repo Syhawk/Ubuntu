@@ -37,3 +37,16 @@ git remote add origin git@github.com:你的github用户名/你的github项目名
 git push origin master
 
 在该步骤执行push时，有可能系统要求你先pull一下，那就先pull一下，再push。
+
+
+取消github在每次push的时候，都要输入用户名和密码
+
+原因是使用了https方式 push
+
+git remote -v （能够查看结果）
+
+下面把它换成ssh方式的。
+
+1. git remote rm origin
+2. git remote add origin git@github.com:用户名/仓库名.git
+3. git push origin 

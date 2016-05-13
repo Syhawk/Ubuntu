@@ -39,7 +39,7 @@ git push origin master
 在该步骤执行push时，有可能系统要求你先pull一下，那就先pull一下，再push。
 
 
-取消github在每次push的时候，都要输入用户名和密码
+###取消github在每次push的时候，都要输入用户名和密码
 
 原因是使用了https方式 push
 
@@ -50,3 +50,7 @@ git remote -v （能够查看结果）
 1. git remote rm origin
 2. git remote add origin git@github.com:用户名/仓库名.git
 3. git push origin 
+
+
+###git push 不成功可以通过如下命令进行代码合并【注：pull=fetch+merge]
+git pull --rebase origin master

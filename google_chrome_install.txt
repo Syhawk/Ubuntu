@@ -9,3 +9,7 @@ sudo apt-get -f install
 
 #fourth
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+sudo apt-get upgrade NSS
+sudo apt-get install libnss3.26
+sudo apt-get upgrade libnss3

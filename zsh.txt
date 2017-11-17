@@ -1,9 +1,16 @@
-sudo apt-get install git
+sudo apt-get install git zsh
 
-sudo apt-get install zsh
+chsh -s `which zsh`
 
 #安装「oh my zsh」自动安装：
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc 
+
 #zsh作为默认shell，重启或者注销生效
 chsh -s /bin/zsh
+
+右键打开终端功能
+sudo apt-get install nautilus-open-terminal
+终端分屏
+sudo apt-get install terminator

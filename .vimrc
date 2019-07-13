@@ -1,3 +1,4 @@
+set paste                   " 关闭格式混乱
 "compatible            " 关闭 vi 兼容模式
 syntax on                   " 自动语法高亮
 "colorscheme molokai         " 设定配色方案
